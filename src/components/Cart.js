@@ -3,10 +3,12 @@ import cartImage from "../assets/images/cart.jpg"; // Adjust the path based on w
 import { CartContext } from "./context/cart-context"; // Adjust the path as necessary
 import { FaPlus, FaMinus } from "react-icons/fa";
 import Address from "./Address"; // Import the Address component
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cartProducts, setCartCounter, addToCart, removeFromCart } =
     useContext(CartContext);
+  const navigate = useNavigate();
 
   const incrementQuantity = (product) => {
     setCartCounter((prevCount) => prevCount + 1);
@@ -76,7 +78,12 @@ const Cart = () => {
             <h2 className="text-2xl font-bold">
               Total: Rs {Math.round(calculateTotal() * 90)}
             </h2>
-            <button className="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600">
+            <button className="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 cursor-pointer" onClick={() => {
+              if(!localStorage.getItem("preferredAddress")){
+                alert("Please select a preferred address before proceeding to checkout.");
+                return; 
+              }
+              navigate('/payment')}}>
               Proceed to Checkout
             </button>
           </div>

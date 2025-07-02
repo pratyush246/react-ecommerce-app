@@ -9,6 +9,7 @@ import { useLocation } from "react-router-dom";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Cart from "./Cart";
+import Payment from "./Payment";
 
 const App = () => {
   const location = useLocation();
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/products" element={<ProductCategory />} />
         <Route path="/products/:id" element={<ProductDetails />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </div>
   );

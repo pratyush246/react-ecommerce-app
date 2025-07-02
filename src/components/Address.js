@@ -148,7 +148,7 @@ const Address = () => {
         <div className="text-gray-700">
           <p>No saved addresses found.</p>
           <button
-            className="flex items-center text-blue-500 hover:text-blue-700 mt-4"
+            className="flex items-center text-blue-500 hover:text-blue-700 mt-4 cursor-pointer"
             onClick={() => setIsAddingAddress(true)}
           >
             <FaPlus className="mr-2" />
@@ -160,7 +160,7 @@ const Address = () => {
       {isAddingAddress && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded shadow-md w-96">
-            <h3 className="text-lg font-bold mb-4 text-blue-500">
+            <h3 className="text-lg font-bold mb-4 text-blue-500 cursor-pointer" onClick={() => setIsAddingAddress(false)}>
               Add New Address
             </h3>
             <form className="space-y-4">
