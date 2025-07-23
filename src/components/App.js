@@ -10,6 +10,7 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import Cart from "./Cart";
 import Payment from "./Payment";
+import Profile from "./Profile";
 
 const App = () => {
   const location = useLocation();
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/products" element={<ProductCategory />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/payment" element={<Payment />} />

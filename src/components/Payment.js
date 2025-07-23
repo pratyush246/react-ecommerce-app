@@ -30,7 +30,7 @@ const Payment = () => {
   });
   const [upiId, setUpiId] = useState("");
 
-  const { totalPrice } = useContext(CartContext);
+  const { totalPrice ,setCartProducts ,setTotalPrice, setCartCounter } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleCardChange = (e) => {
@@ -45,6 +45,9 @@ const Payment = () => {
     e.preventDefault();
     // Here you would handle payment submission logic
     alert(`Payment method: ${selectedMethod}\nThank you for your order! Your order will be delivered in 6-7 days.`);
+    setCartProducts([]);
+    setTotalPrice(null);
+    setCartCounter(null);
     navigate("/products");
   };
 

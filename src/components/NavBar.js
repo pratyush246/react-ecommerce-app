@@ -8,8 +8,10 @@ import {
 } from "react-icons/fa";
 import { CartContext } from "./context/cart-context";
 import { UserContext } from "./context/user-context"; // Assuming UserContext is imported for user-related functionality
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate = useNavigate();
   const { cartCounter } = useContext(CartContext);
   const { currentUser } = useContext(UserContext); // Assuming currentUser is used for user-related functionality
 
@@ -21,7 +23,7 @@ const NavBar = () => {
         </Link>
         <div className="flex items-center space-x-6">
           {currentUser && (
-            <div className="flex items-center space-x-2 text-white">
+            <div className="flex items-center space-x-2 text-white cursor-pointer" onClick={() => navigate("/profile")}>
               <FaUserCircle size={36} />
               <span className="text-2xl font-bold">{currentUser}</span>
             </div>

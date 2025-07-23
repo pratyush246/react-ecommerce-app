@@ -50,6 +50,8 @@ export const CartProvider = ({ children }) => {
       value={{
         cartCounter,
         setCartCounter,
+        setCartProducts,
+        setTotalPrice,
         addToCart,
         totalPrice,
         removeFromCart,
